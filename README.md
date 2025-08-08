@@ -32,6 +32,23 @@ Instructions for installing and configuring **PostgreSQL** on a server running *
 
 ## 🗃️ Setting Up and Creating a Database
 
+### 🛡️ (Optional) Grant Superuser Privileges
+
+If you want to give your user full administrative rights (use with caution):
+
+```sql
+ALTER USER your_user WITH SUPERUSER;
+```
+
+You can verify with:
+
+```sql
+\du
+```
+
+The user should now show `Superuser` in the `Attributes` column.
+
+
 Inside the PostgreSQL shell (`psql`):
 
 ```sql
