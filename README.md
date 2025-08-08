@@ -32,6 +32,19 @@ Instructions for installing and configuring **PostgreSQL** on a server running *
 
 ## 🗃️ Setting Up and Creating a Database
 
+
+The user should now show `Superuser` in the `Attributes` column.
+
+
+Inside the PostgreSQL shell (`psql`):
+
+```sql
+CREATE DATABASE your_database_name;                -- Create a database
+CREATE USER your_user WITH PASSWORD 'your_password';  -- Create a user
+GRANT ALL PRIVILEGES ON DATABASE your_database_name TO your_user; -- Grant privileges
+```
+
+
 ### 🛡️ (Optional) Grant Superuser Privileges
 
 If you want to give your user full administrative rights (use with caution):
@@ -44,17 +57,6 @@ You can verify with:
 
 ```sql
 \du
-```
-
-The user should now show `Superuser` in the `Attributes` column.
-
-
-Inside the PostgreSQL shell (`psql`):
-
-```sql
-CREATE DATABASE your_database_name;                -- Create a database
-CREATE USER your_user WITH PASSWORD 'your_password';  -- Create a user
-GRANT ALL PRIVILEGES ON DATABASE your_database_name TO your_user; -- Grant privileges
 ```
 
 Then exit:
